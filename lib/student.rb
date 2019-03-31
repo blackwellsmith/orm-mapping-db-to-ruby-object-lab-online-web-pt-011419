@@ -82,7 +82,7 @@ end
       WHERE grade = 10 
       LIMIT 1
       SQL
-      first_student_row = DB[:conn].execute(sql)
+      first_student_row = DB[:conn].execute(sql)[0]
     self.new_from_db(first_student_row)
   end
   def self.students_below_12th_grade
